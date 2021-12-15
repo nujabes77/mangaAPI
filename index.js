@@ -16,8 +16,9 @@ const PORT  = process.env.PORT || 5000
 app.listen(PORT, () => console.log('Server Started'));
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
-// console.log(accountSid);
+console.log(accountSid);
 const authToken = process.env.TWILIO_AUTH_TOKEN;
+console.log(authToken);
 
 let count = 0;
 
@@ -25,15 +26,15 @@ let out = setInterval(function(){
 let number  = count++
 if(number > 23){count = 1};
 
-// console.log(count)
+console.log(count)
     superagent.get('https://w12.mangafreak.net/')
     .set('content-type', 'text/html; charset=UTF-8')
     .end((err, res) => {
     let yesterdaysMangaIndex = res.text.indexOf("YESTERDAY'S MANGA");
     let todaysMangaIndex = res.text.indexOf("TODAY'S MANGA");
     let todaysManga = res.text.slice(todaysMangaIndex, yesterdaysMangaIndex);
-    let myMangaList = ["Orenchi Ni Kita Onna Kishi To Inakagurashi Surukotoninatta Ken","Fire Brigade Of Flames", "Solo Leveling Warrior", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
-    // let myMangaList = [""];
+    // let myMangaList = ["Orenchi Ni Kita Onna Kishi To Inakagurashi Surukotoninatta Ken","Fire Brigade Of Flames", "Solo Levelingç", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
+    let myMangaList = [""];
     let message = [];
     for(i = 0; i < myMangaList.length; i++){
         if(todaysManga.includes(myMangaList[i])){message.push(myMangaList[i])}
@@ -93,7 +94,7 @@ if(number > 23){count = 1};
 
 
         let array = result1.concat(result2).concat(result3).concat(result3).concat(result4).concat(result5).concat(result6).concat(result7).concat(result8).concat(result9).concat(result10).concat(result11).concat(result12).concat(result13).concat(result14).concat(result15).concat(result16).concat(result17).concat(result18).concat(result19).concat(result20).concat(result21).concat(result22).concat(result23).concat(result24);
-        // console.log(array);
+        console.log(array);
 
         let unique = (value, index, self) => {
             return self.indexOf(value) === index
@@ -107,7 +108,7 @@ if(number > 23){count = 1};
         //   console.log(typeof(message));
           for(v = 0; v < message.length; v++){
               messageThis = message[v];
-            //   console.log("messageThis: ", messageThis);
+              console.log("messageThis: ", messageThis);
             //   console.log((typeof(messageThis)));
             //   console.log(uniqueString.includes(messageThis));
              if(uniqueString.indexOf(messageThis) < 0){
@@ -115,7 +116,7 @@ if(number > 23){count = 1};
              }
           }
           mangasToBeSend;
-        //   console.log('send message for ', mangasToBeSend);
+          console.log('send message for ', mangasToBeSend);
 
           if(mangasToBeSend.length > 0){
 
@@ -133,7 +134,7 @@ if(number > 23){count = 1};
          messagingServiceSid: 'MG98f67012941711785ec55e4b63909b72',      
          to: '+447956968563' 
        }) 
-    //   .then(whatsappText => console.log(whatsappText.sid)) 
+      .then(whatsappText => console.log(whatsappText.sid)) 
       .done();
     
           }
@@ -173,8 +174,8 @@ if(number > 23){count = 1};
 });
     
 
-}, 3600000);
-// }, 1000);
+// }, 3600000);
+}, 3000);
 
 
 
