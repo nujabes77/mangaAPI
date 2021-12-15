@@ -32,7 +32,7 @@ if(number > 23){count = 1};
     let yesterdaysMangaIndex = res.text.indexOf("YESTERDAY'S MANGA");
     let todaysMangaIndex = res.text.indexOf("TODAY'S MANGA");
     let todaysManga = res.text.slice(todaysMangaIndex, yesterdaysMangaIndex);
-    let myMangaList = ["Orenchi Ni Kita Onna Kishi To Inakagurashi Surukotoninatta Ken","Fire Brigade Of Flames", "Solo Leveling Warrior", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
+    let myMangaList = ["Fire Brigade Of Flames", "Solo Leveling Warrior", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
     // let myMangaList = [""];
     let message = [];
     for(i = 0; i < myMangaList.length; i++){
@@ -173,8 +173,8 @@ if(number > 23){count = 1};
 });
     
 
-// }, 3600000);
-}, 120000);
+}, 3600000);
+// }, 120000);
 
 
 
