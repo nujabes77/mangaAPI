@@ -32,8 +32,8 @@ console.log(count)
     let yesterdaysMangaIndex = res.text.indexOf("YESTERDAY'S MANGA");
     let todaysMangaIndex = res.text.indexOf("TODAY'S MANGA");
     let todaysManga = res.text.slice(todaysMangaIndex, yesterdaysMangaIndex);
-    // let myMangaList = ["Fire Brigade Of Flames", "Solo Leveling", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
-    let myMangaList = [""];  
+    let myMangaList = ["Fire Brigade Of Flames", "Solo Leveling", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
+    // let myMangaList = [""];  
     let message = [];
     for(i = 0; i < myMangaList.length; i++){
         if(todaysManga.includes(myMangaList[i])){message.push(myMangaList[i])}
