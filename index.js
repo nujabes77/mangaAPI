@@ -67,7 +67,7 @@ console.log(message);
     
     async function findOneListingByName(clientMongo){
         const resultList =  await clientMongo.db("listMangas").collection("listMangas").findOne({name: 'manga'});
-        console.log(esultList);
+        console.log(resultList);
         result1 = resultList.a;
         result2 = resultList.b;
         result3 = resultList.c;
