@@ -66,6 +66,7 @@ console.log(count)
     
     async function findOneListingByName(clientMongo){
         const resultList =  await clientMongo.db("listMangas").collection("listMangas").findOne({name: 'manga'});
+        console.log(resultList);
         result1 = resultList.a;
         result2 = resultList.b;
         result3 = resultList.c;
@@ -168,13 +169,13 @@ console.log(count)
       obj[objAlp] = message;
      async function updateMangaList(clientMongo){
         const result =  await clientMongo.db("listMangas").collection("listMangas").updateOne({name: 'manga'}, {$set: obj});
-        console.log("number of matching docs: ", result.matchedCount);
+        console.log("number of matching docs: ", result);
      }};}
 });
     
 
 // }, 3600000);
-}, 3000);
+}, 10000);
 
 
 
