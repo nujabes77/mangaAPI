@@ -34,7 +34,7 @@ console.log(count)
     let todaysMangaIndex = res.text.indexOf("TODAY'S MANGA");
     let todaysManga = res.text.slice(todaysMangaIndex, yesterdaysMangaIndex);
     let myMangaList = ["Fire Brigade Of Flames", "Solo Leveling", "One Piece", "Tower of God", "Jujutsu Kaisen", "Onepunch Man", "Survival Story Of A Sword King In A Fantasy World", "Skeleton Soldier"];
-    // let myMangaList = [""];
+    // let myMangaList = [""];  
     let message = [];
     for(i = 0; i < myMangaList.length; i++){
         if(todaysManga.includes(myMangaList[i])){message.push(myMangaList[i])}
@@ -127,7 +127,7 @@ console.log(count)
         }else{whatsappText = "New Chapter available for " + mangasToBeSend.join(' and ')}
          
         const client = require('twilio')(accountSid, authToken);
-        // console.log("whatsappText:", whatsappText);
+        console.log("whatsappText:", whatsappText);
         client.messages 
       .create({ 
          body: whatsappText, 
@@ -169,7 +169,7 @@ console.log(count)
       obj[objAlp] = message;
      async function updateMangaList(clientMongo){
         const result =  await clientMongo.db("listMangas").collection("listMangas").updateOne({name: 'manga'}, {$set: obj});
-        // console.log(result.matchedCount);
+        console.log("number of matching docs: ", result.matchedCount);
      }};}
 });
     
