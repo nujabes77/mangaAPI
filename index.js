@@ -23,7 +23,7 @@ let count = 0;
 
 let out = setInterval(function(){
 let number  = count++
-if(number > 23){count = 1};
+if(number > 23){count = 0};
 
 console.log(count)
     superagent.get('https://w12.mangafreak.net/')
@@ -39,7 +39,7 @@ console.log(count)
     for(i = 0; i < myMangaList.length; i++){
         if(todaysManga.includes(myMangaList[i])){message.push(myMangaList[i])}
     }
-// console.log(message);
+console.log(message);
 
     let messageString;
     if(message.length > 0){
@@ -67,7 +67,7 @@ console.log(count)
     
     async function findOneListingByName(clientMongo){
         const resultList =  await clientMongo.db("listMangas").collection("listMangas").findOne({name: 'manga'});
-        console.log(resultList);
+        console.log(esultList);
         result1 = resultList.a;
         result2 = resultList.b;
         result3 = resultList.c;
@@ -176,7 +176,9 @@ console.log(count)
     
 
 // }, 3600000);
-}, 10000);
+
+
+},  1000);
 
 
 
