@@ -45,10 +45,9 @@ console.log(message);
     if(message.length > 0){
     
 
-   
 
     async function main(){
-        const uri =  "mongodb+srv://nujabes1:test1234!@cluster0.jkc0e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+        const uri =  "mongodb+srv://" + process.env.Mongo + ".jkc0e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
         const clientMongo = new MongoClient(uri);
       
         try { 
@@ -146,7 +145,7 @@ console.log(message);
         if(message.length < 1){message = ['n/a']};
 // console.log("Number of mangas:", message.length);
           async function maintwo(){
-            const uri =  "mongodb+srv://nujabes1:test1234!@cluster0.jkc0e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+            const uri =  "mongodb+srv://" + process.env.Mongo + ".jkc0e.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
             const clientMongo = new MongoClient(uri);
           
           //   await clientMongo.connect();
